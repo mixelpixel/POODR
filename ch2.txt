@@ -47,22 +47,46 @@ BOTH DATA AND BEHAVIOR.
 (see ch2b_Gear_class.rb)
 Gear class methods: chainring, cog and ratio
 NOTE: "Inheritance" - Gear is a subclass of "Object" in Ruby and inherits many other methods from class:Object
+(see ch6 - acquiring behavior through inheritance)
 (see ch2c_Gear.wheel_class.rb)
+Initialize variables have changed and old method does not work now, but it's so small it can be ignored for now.
 
 3b) Why Single Responsibility Matters 21
-
+Minimal entanglements in the program and within each class
 
 3c) Determining If a Class Has a Single Responsibility 22
-
+COHESION: Can you describe a class with one sentence without "and" or "or"?
+The Single Responsibility Principle (SRP) has its roots in
+Rebecca Wirfs-Brock and Brian Wilkerson’s idea of
+Responsibility-Driven Design (RDD)
+Everything in a class be related to it's purpose
 
 3d) Determining When to Make Design Decisions 22
-
+Resist making design decisions prematurely
+Cost-effectiveness of waiting for more information
 
 4) Writing Code That Embraces Change 24
-
+How to arrange the code so that the Class and methods will be easy to change?
 
 4a) Depend on Behavior, Not Data 24
-
+Behavior is captured in methods and invoked by sending messages.
+With single responsibility classes, every tiny bit of behavior lives in one place and only one place
+D.R.Y. Don't Repeat Yourself
+Data is held in instance variables - from simple to complex
+Data is accessed two ways:
+1) refer directly to instance variable, or,
+2) wrap the instance in an accessor method
+_Hide Instance Variables
+(see ch2d_road_to_ruin.rb)
+Use "attr_reader" to create the encapsulating methods
+(see ch2e_attr.rb)
+WRAPPERS - change data to behavior!!!!
+Two issues:
+1) Visibility - Pulic vs. Private (see ch.4 creating flexible interfaces)
+2) Abstraction: blurry distinction between objects and data
+_Hide Data Structures
+Complicated data structres are as bad if not worse than being attached to an instance variable
+(see ch2f_obscuring.rb)
 
 4b) Enforce Single Responsibility Everywhere 29
 

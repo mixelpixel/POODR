@@ -1,6 +1,6 @@
 =begin
 http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
-Chapter 2: Designing Classes with a Single Responsibility
+Chapter 2: Designing Classes with a Single Responsibility, pg.19
 =end
 
 # A Class with a single responsibility
@@ -13,7 +13,7 @@ class Gear
   end
   
   def ratio
-    chainring / cog.to_f # <<< THE ROAD TO RUIN!!!
+    chainring / cog.to_f
   end
 end
 

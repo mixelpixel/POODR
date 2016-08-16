@@ -1,6 +1,6 @@
 =begin
 http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
-Chapter 2: Designing Classes with a Single Responsibility, p.18
+Chapter 2: Designing Classes with a Single Responsibility, pg.18
 =end
 
 # a procedure for determining the gear ratio
