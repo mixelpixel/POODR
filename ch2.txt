@@ -8,37 +8,37 @@ Chapter 2 Designing Classes with a Single Responsibility
 2) Deciding What Belongs in a Class 16
 
 
-3) Grouping Methods into Classes 16
+2a) Grouping Methods into Classes 16
 
 
-4) Organizing Code to Allow for Easy Changes 16
+2b) Organizing Code to Allow for Easy Changes 16
 
 
-5) Creating Classes That Have a Single Responsibility 17
+3) Creating Classes That Have a Single Responsibility 17
 
 
-6) An Example Application: Bicycles and Gears 17
+3a) An Example Application: Bicycles and Gears 17
 
 
-7) Why Single Responsibility Matters 21
+3b) Why Single Responsibility Matters 21
 
 
-8) Determining If a Class Has a Single Responsibility 22
+3c) Determining If a Class Has a Single Responsibility 22
 
 
-9) Determining When to Make Design Decisions 22
+3d) Determining When to Make Design Decisions 22
 
 
-10) Writing Code That Embraces Change 24
+4) Writing Code That Embraces Change 24
 
 
-11) Depend on Behavior, Not Data 24
+4a) Depend on Behavior, Not Data 24
 
 
-12) Enforce Single Responsibility Everywhere 29
+4b) Enforce Single Responsibility Everywhere 29
 
 
-13) Finally, the Real Wheel 33
+5) Finally, the Real Wheel 33
 
 
-14) Summary 34
+6) Summary 34
