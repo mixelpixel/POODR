@@ -76,7 +76,7 @@ Data is held in instance variables - from simple to complex
 Data is accessed two ways:
 1) refer directly to instance variable, or,
 2) wrap the instance in an accessor method
-_Hide Instance Variables
+__Hide Instance Variables
 (see ch2d_road_to_ruin.rb)
 Use "attr_reader" to create the encapsulating methods
 (see ch2e_attr.rb)
@@ -84,11 +84,26 @@ WRAPPERS - change data to behavior!!!!
 Two issues:
 1) Visibility - Pulic vs. Private (see ch.4 creating flexible interfaces)
 2) Abstraction: blurry distinction between objects and data
-_Hide Data Structures
+__Hide Data Structures
 Complicated data structres are as bad if not worse than being attached to an instance variable
 (see ch2f_obscuring.rb)
+References to complicated data structures are LEAKY
+they escape encapsulation and insinuate themselves throughout the code
+This is not D.R.Y.
+The knowledge that rims are at [0] and tires at [1] should not be duplicated - just known in one place
+Use Ruby to spearate structure from meaning
+(see ch2_revealing.rb)
+"The official Ruby documentation (http://ruby-doc.org/core/classes/Struct.html)
+defines Struct as “a convenient way to bundle a number of attributes together, using
+accessor methods, without having to write an explicit class.” This is exactly what
+wheelify does; it creates little lightweight objects that respond to rim and tire."
+"wheelify" trades indexing into a structure for sending messages to an object;
+it isolates messy structural info and DRYs out the code
+THIS MAKES THE CLASS MORE TOLERANT OF CHANGE
 
 4b) Enforce Single Responsibility Everywhere 29
+Create classes with single responsibilities
+__Extract Extra Responsibilities From Methods\
 
 
 5) Finally, the Real Wheel 33
