@@ -27,12 +27,25 @@ Code should be T.R.U.E.:
 2) Reasonable
 3) Useable
 4) Exemplary
-Step 1 to TRUE code is making
-3) Creating Classes That Have a Single Responsibility 17
+Step 1 to TRUE code is making sure each class has a single, well-defined responsibility
 
+3) Creating Classes That Have a Single Responsibility 17
+"A class should do the smallest possible useful thing; that is, it should have a single responsibility."
 
 3a) An Example Application: Bicycles and Gears 17
-
+Small gears: easy to pedal, not very fast
+Large gears: harder to pedal, get you moving with more speed
+Gears control wheel rotation per pedal rotation
+Small gears: pedal rotates many times per wheel rotation
+Large gears: pedal rotates fewer times; wheel rotates more per pedal rotation
+Comparisons of gears done by RATIO of the number of teeth
+(see ch2_simple_script.rb)
+NOTE: there is no need to make a "bicycle" class.
+The behavior of the gears does affect the speed of the bicycle,
+but it is the gear chainrings, cogs and ratios that have
+BOTH DATA AND BEHAVIOR.
+(see ch2_simple_Gear_class.rb)
+Gear class methods: chainring, cog and ratio
 
 3b) Why Single Responsibility Matters 21
 
