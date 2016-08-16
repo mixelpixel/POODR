@@ -104,10 +104,28 @@ THIS MAKES THE CLASS MORE TOLERANT OF CHANGE
 4b) Enforce Single Responsibility Everywhere 29
 Create classes with single responsibilities
 __Extract Extra Responsibilities From Methods\
-
+Methods, like classes, should have single responsibility.
+ask questions about what they do 
+and try to answer them in one sentence
+(see ch2h_diameters.rb)
+Refactoring for single responsibility is needed/beneficial when the long term design goals are not clear
+Benefits
+1) Expose previously hidden qualities
+2) Avoid the need for comments
+3) Encourage reuse
+4) Are easy to move to another class
+__Isolate Extra Responsibilities in Classes
+Any decisions or commitments made in advance of explicit requirements are just a guess
+(see ch2i.rb)
+Do not allow extraneous responsibilities to leak into your class.
 
 5) Finally, the Real Wheel 33
-
+(see ch2j_wheel.rb)
 
 6) Summary 34
+"The path to changeable and maintainable object-oriented software begins with classes
+that have a single responsibility. Classes that do one thing isolate that thing from the
+rest of your application. This isolation allows change without consequence and reuse
+without duplication."
+
 
