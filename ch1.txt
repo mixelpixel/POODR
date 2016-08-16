@@ -50,7 +50,7 @@ Open/closed
 Liskov substitution
 Interface segregation
 Dependency inversion
-Term coined by Michael Feathers
+"S.O.L.I.D." term coined by Michael Feathers
 Popularized by Robert Martin
 Liskov Substitution:
 http://www.oodesign.com/liskov-s-substitution-principle.html
@@ -130,3 +130,4 @@ Objects invoke one another’s behavior by sending each other messages."
 ...Practice lives in the real world of change, confusion, and uncertainty. It
 faces competing choices and, grimacing, chooses the lesser evil; it dodges, it hedges, it
 robs Peter to pay Paul. It makes a living by doing the best it can with what it has."
+

@@ -3,17 +3,31 @@ Chapter 2 Designing Classes with a Single Responsibility
 
 
 1) Designing Classes with a Single Responsibility 15
-
+The MESSAGE is the foundation of an OO system but the CLASS is the 
+most visible part of its structure.
+Start SIMPLE - obtain what is needed now with an eye towards facilitating later (inevitable) changes
+Standing targets will move
 
 2) Deciding What Belongs in a Class 16
-
+"Get organizized" where to put the code?
 
 2a) Grouping Methods into Classes 16
-
+Methods are defined in class & classes can "box in" & constrain imagination
+Design is the art of preserving changeability (for actionability)
 
 2b) Organizing Code to Allow for Easy Changes 16
-
-
+Easily changeable code = "Children should be polite" Easier said than done
+Code that's easy to change:
+1) Changes have no unexpected side effects
+2) Small changes in requirements require correspondingly small changes in code
+3) Existing code is easy to reuse
+4) An easy way to make change is to add code that itself is easy to change
+Code should be T.R.U.E.:
+1) Transparent
+2) Reasonable
+3) Useable
+4) Exemplary
+Step 1 to TRUE code is making
 3) Creating Classes That Have a Single Responsibility 17
 
 
@@ -42,3 +56,4 @@ Chapter 2 Designing Classes with a Single Responsibility
 
 
 6) Summary 34
+
