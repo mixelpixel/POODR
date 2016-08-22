@@ -1,0 +1,40 @@
+http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
+CHAPTER 3
+Managing Dependencies
+
+
+1) Understanding Dependencies 36
+
+
+2) Recognizing Dependencies 37
+
+
+3) Coupling Between Objects (CBO) 37
+
+
+4) Other Dependencies 38
+
+
+5) Writing Loosely Coupled Code 39
+
+
+6) Inject Dependencies 39
+
+
+7) Isolate Dependencies 42
+
+
+8) Remove Argument-Order Dependencies 46
+
+
+9) Managing Dependency Direction 51
+
+
+10) Reversing Dependencies 51
+
+
+11) Choosing Dependency Direction 53
+
+
+12) Summary 57
+

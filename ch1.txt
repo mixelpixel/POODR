@@ -1,5 +1,6 @@
 http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
-Chapter 1: Object-Oriented Design
+CHAPTER 1
+Object-Oriented Design
 
 
 1) Object-Oriented Design 1
