@@ -7,7 +7,7 @@ Chapter 2: Designing Classes with a Single Responsibility, pg.33
 
 class Gear
   attr_reader :chainring, :cog, :wheel
-  def initialize(chainring, cogm wheel=nil)
+  def initialize(chainring, cog, wheel=nil)
     @chainring = chainring
     @cog       = cog
     @wheel     = wheel
@@ -18,7 +18,7 @@ class Gear
   end
   
   def gear_inches
-    ratio * wheel diameter
+    ratio * wheel.diameter
   end
 end
 
@@ -40,7 +40,7 @@ class Wheel
 end
 
 @wheel = Wheel.new(26, 1.5)
-puts @wheel.curcumference
+puts @wheel.circumference
 # --> 91.106186954104
 
 puts Gear.new(52, 11, @wheel).gear_inches

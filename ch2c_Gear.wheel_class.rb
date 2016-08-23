@@ -39,7 +39,7 @@ puts Gear.new(52, 11, 24, 1.25).gear_inches
 # -> 125.272727272727
 
 # NOTE: the previous method now does not work
-puts Gear.new(52, 11).ratio
+# puts Gear.new(52, 11).ratio
 # ArgumentError
 
 
