@@ -1,4 +1,4 @@
-# PracticalObjectOrientedDesigninRuby_AnAgilePrimer
+# Practical Object Oriented Design in Ruby: An Agile Primer
 
 These are exercises and notes while reading "Practical Object Oriented Design in Ruby: An Agile Primer"  
 by Sandi Metz  
