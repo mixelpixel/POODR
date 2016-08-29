@@ -112,6 +112,9 @@ Merging Hashes
 
 
 4.3) Isolate Multiparameter Initialization 49
+implementing a defaults method
+single method to wrap an external interface; wrapping method to isolate external dependencies
+Use modules to create objects of some other class: FACTORIES
 
 
 
