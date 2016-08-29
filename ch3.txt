@@ -80,7 +80,7 @@ and the dependencies on "Wheel" are PUBLICLY EXPOSED (revealed, not concealed)
 
 3b.2) Isolate Vulnerable External Messages 44
 Now, focues on "Messages that are sent to someone other than self"
-(see Ch3e.rb)
+(see ch3e.rb)
 REMOVE the external dependency from the method and ENCAPSULATE the dependency
 in its own method - easier to manage
 The "gear_inches" method now depends on a message "Gear" send to "self"
@@ -89,11 +89,11 @@ The "gear_inches" method now depends on a message "Gear" send to "self"
 
 4) Remove Argument-Order Dependencies 46
 Methods requiring arguments in a specific, fixed order
-(see Ch3f.rb)
+(see ch3f.rb)
 
 
 4.1) Using Hashes for Initialization Arguments 46
-(see Ch3g.rb)
+(see ch3g.rb)
 Hashing adds verbosity, but it is worth it for the benefits of not being
 dependent upon the specific order of arguments, but NOTE we do gain a
 dependency upon the names of the KEYS in the HASH (This is a healthy and
@@ -104,27 +104,45 @@ stabilizing change - key names document the arguments)
 Using Ruby's || method - a.k.a. "CONDITIONAL ASSIGNEMNT"
 http://stackoverflow.com/questions/4500375/double-pipe-symbols-in-ruby-variable-assignment
 https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Operators#1._Assignment
-(see Ch3h.rb)
+(see ch3h.rb)
 Fetching
-(see Ch3i.rb)
+(see ch3i.rb)
 Merging Hashes
-(see Ch3j.rb
+(see ch3j.rb)
 
 
 4.3) Isolate Multiparameter Initialization 49
 implementing a defaults method
 single method to wrap an external interface; wrapping method to isolate external dependencies
 Use modules to create objects of some other class: FACTORIES
-
+(see ch3k.rb)
 
 
 5) Managing Dependency Direction 51
+Dependencies have a direction. Decide which way it flows.
 
 
 5a) Reversing Dependencies 51
+(see ch3l.rb)
+An insignificant change here, but it affects future flexibility
 
 
 5b) Choosing Dependency Direction 53
+1) some classes are more likely than others to have changes in requirements
+2) Concrete classes are more likely to change than abstract classes
+3) Changing a class that has many dependencies will result in widespread consequences
+
+
+5b.1) Understanding Likelihood of Change
+
+
+5b.2) Recognizing Concretions and Abstractions
+
+
+5b.3) Avoiding Dependent-Laden Classes
+
+
+5b.4) Finding the Dependencies That Matter
 
 
 
