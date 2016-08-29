@@ -9,6 +9,8 @@ List of instructions vs. objects passing messages back and forth (setters & gett
 O.O.D. = Object Oriented Design
 When to do it and how to judge it?
 
+
+
 2) In Praise of Design 2
 what is the purpose of the program?
 what goals does it service?
@@ -36,6 +38,8 @@ Practical Design accepts that some things will inevitably change.
 Practical Deisgn preserves options for accomodating unforseeable changes.
 The purpose of Practical Design is to allow you to do design later.
 A primary goal is to REDUCE THE COST OF CHANGE
+
+
 
 3) The Tools of Design 4
 Principles and Pattern are the tools of OOD
@@ -88,6 +92,8 @@ design” that you can use to “make your own designs more flexible, modular, r
 and understandable.”"
 Don't abuse the patterns. Use them appropriately.
 
+
+
 4) The Act of Design 7
 Software is like custom furniture: principles and patterns are like woodworking tools.
 Knowing how you want the software to look doesn't make it build itself.
@@ -115,6 +121,8 @@ but Agile aims for better features.
 "Technical debt" - making something that works now as opposed to works great tomorrow is
 a compromise you will face. Don't let designing keep you from delivering software!
 
+
+
 5)A Brief Introduction to Object-Oriented Programming 11
 Object oriented applications are made up of objects and the messages that pass between them.
 
@@ -126,9 +134,12 @@ data and behavior combined into an object
 "Objects have behavior and may contain data, data to which they alone control access.
 Objects invoke one another’s behavior by sending each other messages."
 
+
+
 6) Summary 14
 "Design relies on your ability to translate theory into practice
 ...Practice lives in the real world of change, confusion, and uncertainty. It
 faces competing choices and, grimacing, chooses the lesser evil; it dodges, it hedges, it
 robs Peter to pay Paul. It makes a living by doing the best it can with what it has."
+
 

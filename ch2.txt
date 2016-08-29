@@ -9,6 +9,8 @@ most visible part of its structure.
 Start SIMPLE - obtain what is needed now with an eye towards facilitating later (inevitable) changes
 Standing targets will move
 
+
+
 2) Deciding What Belongs in a Class 16
 "Get organizized" where to put the code?
 
@@ -29,6 +31,8 @@ Code should be T.R.U.E.:
 3) Useable
 4) Exemplary
 Step 1 to TRUE code is making sure each class has a single, well-defined responsibility
+
+
 
 3) Creating Classes That Have a Single Responsibility 17
 "A class should do the smallest possible useful thing; that is, it should have a single responsibility."
@@ -65,6 +69,8 @@ Everything in a class be related to it's purpose
 3d) Determining When to Make Design Decisions 22
 Resist making design decisions prematurely
 Cost-effectiveness of waiting for more information
+
+
 
 4) Writing Code That Embraces Change 24
 How to arrange the code so that the Class and methods will be easy to change?
@@ -120,8 +126,12 @@ Any decisions or commitments made in advance of explicit requirements are just a
 (see ch2i.rb)
 Do not allow extraneous responsibilities to leak into your class.
 
+
+
 5) Finally, the Real Wheel 33
 (see ch2j_wheel.rb)
+
+
 
 6) Summary 34
 "The path to changeable and maintainable object-oriented software begins with classes

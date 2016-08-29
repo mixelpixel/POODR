@@ -4,46 +4,96 @@ Managing Dependencies
 
 
 1) Managing Dependencies
-a) actions a class object implements
-b) actions a class object inherits
+a) actions a class object implements (see Ch. 2)
+b) actions a class object inherits (see Ch. 6)
 c) actions a class objects dependes on another class object for
-Collaboration
+Getting access to behavior when that behavior is implemented by OTHER objects
+Collaboration - because well designed objects have a single responsibility,
+they require collaboration
+
+
 
 2) Understanding Dependencies 36
+(see ch3a.rb)
+"Gear" has at least four dependencies on "Wheel"
+
+
+2a) Recognizing Dependencies 37
+An object has a dependency when it knows
+1) The name of another class
+    e.g. "Gear" expects a class named "Wheel" to exist
+2) The name of a message that it intends to send to someone other than "self"
+    e.g. "Gear" expects a "Wheel" instance to respond to "diameter"
+3) The arguments that a message requires
+    e.g. "Gear" knows that "Wheel.new" requires a "rim" and a "tire"
+4) The order of those arguments
+    e.g. "Gear" knows the first argument to "Wheel.new" should be "rim" and the second, "tire".
+Gear will likely need to be changed (at least checked/tested) whenever Wheel changes
+A class should know just enough to do its job and nothing more.
+
+
+2b) Coupling Between Objects (CBO) 37
+The above dependencies "COUPLE" Gear to Wheel, i.e. coupling creates a dependency.
+This makes it difficult to reuse code elsewhere.
+
+
+2c) Other Dependencies 38
+1) Chaining messages together (magnified version of 2a)-2) above)
+Changing any of the intermediate objects might require the first object to change.
+A violation of: The Law of Demeter (see ch.4)
+https://en.wikipedia.org/wiki/Law_of_Demeter
+"Principle of least knowledge"
+2) Testing code (see Ch. 9)
+Test-to-code over-coupling has the same consequence of code-to-code over-coupling
+
+
+3) Writing Loosely Coupled Code 39
+Recognize dependencies and remove the unecessary ones.
+
+
+3a) Inject Dependencies 39
+Referring to a class by its name is a MAJOR dependency
+(see ch3b.rb)
+If the "Wheel" class name changes, that's a minor fix
+Line 20 (the gear_inches method) is a problem because it requires Wheel class for diameter
+and it requires Wheel initialized with rim & tire, but it only needs the diameter.
+(see ch3c.rb)
+The two classes are now decoupled (but invoking them requires a more verbose call?)
+
+3b) Isolate Dependencies 42
+
+
+3b.1) Isolate Instance Creation 42
+
+
+3b.2) Isolate Vulnerable External Messages 44
 
 
 
-3) Recognizing Dependencies 37
+4) Remove Argument-Order Dependencies 46
 
 
-4) Coupling Between Objects (CBO) 37
+4.1) Using Hashes for Initialization Arguments 46
 
 
-5) Other Dependencies 38
+4.2) Explicitly Define Defaults 48
 
 
-6) Writing Loosely Coupled Code 39
+4.3) Isolate Multiparameter Initialization 49
 
 
-7) Inject Dependencies 39
+
+5) Managing Dependency Direction 51
 
 
-8) Isolate Dependencies 42
+5a) Reversing Dependencies 51
 
 
-9) Remove Argument-Order Dependencies 46
+5b) Choosing Dependency Direction 53
 
 
-10) Managing Dependency Direction 51
 
-
-11) Reversing Dependencies 51
-
-
-12) Choosing Dependency Direction 53
-
-
-13) Summary 57
+6) Summary 57
 
 
 
