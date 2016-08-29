@@ -38,7 +38,7 @@ This makes it difficult to reuse code elsewhere.
 
 
 2c) Other Dependencies 38
-1) Chaining messages together (magnified version of 2a)-2) above)
+1) Chaining messages together (magnified version of ch3-2a-2) above)
 Changing any of the intermediate objects might require the first object to change.
 A violation of: The Law of Demeter (see ch.4)
 https://en.wikipedia.org/wiki/Law_of_Demeter
@@ -47,36 +47,68 @@ https://en.wikipedia.org/wiki/Law_of_Demeter
 Test-to-code over-coupling has the same consequence of code-to-code over-coupling
 
 
+
 3) Writing Loosely Coupled Code 39
 Recognize dependencies and remove the unecessary ones.
 
 
 3a) Inject Dependencies 39
-Referring to a class by its name is a MAJOR dependency
+Referring to a class by its name is a MAJOR dependency (Ch3-2a-1)
 (see ch3b.rb)
 If the "Wheel" class name changes, that's a minor fix
 Line 20 (the gear_inches method) is a problem because it requires Wheel class for diameter
 and it requires Wheel initialized with rim & tire, but it only needs the diameter.
 (see ch3c.rb)
 The two classes are now decoupled (but invoking them requires a more verbose call?)
+Instead of the explicit dependency, now just dependent upon diameter method.
+Gear is smarter cuz it knows less: just because gear needs to send diameter, it does
+not need to know Wheel.
+
 
 3b) Isolate Dependencies 42
+Reduce unnecesaary dependencies so that they are
+easy to spot and reduce when circumstances permit.
 
 
 3b.1) Isolate Instance Creation 42
+if unable to remove dependency entirely, isolate the creation of the dependency instance
+Explicitly expose the dependency while reducing its reach into your class.
+(see ch3d.rb)
+In both examples "Gear" know too much about "Wheel" but the dependencies have been reduced
+and the dependencies on "Wheel" are PUBLICLY EXPOSED (revealed, not concealed)
 
 
 3b.2) Isolate Vulnerable External Messages 44
+Now, focues on "Messages that are sent to someone other than self"
+(see Ch3e.rb)
+REMOVE the external dependency from the method and ENCAPSULATE the dependency
+in its own method - easier to manage
+The "gear_inches" method now depends on a message "Gear" send to "self"
 
 
 
 4) Remove Argument-Order Dependencies 46
+Methods requiring arguments in a specific, fixed order
+(see Ch3f.rb)
 
 
 4.1) Using Hashes for Initialization Arguments 46
+(see Ch3g.rb)
+Hashing adds verbosity, but it is worth it for the benefits of not being
+dependent upon the specific order of arguments, but NOTE we do gain a
+dependency upon the names of the KEYS in the HASH (This is a healthy and
+stabilizing change - key names document the arguments)
 
 
 4.2) Explicitly Define Defaults 48
+Using Ruby's || method - a.k.a. "CONDITIONAL ASSIGNEMNT"
+http://stackoverflow.com/questions/4500375/double-pipe-symbols-in-ruby-variable-assignment
+https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Operators#1._Assignment
+(see Ch3h.rb)
+Fetching
+(see Ch3i.rb)
+Merging Hashes
+(see Ch3j.rb
 
 
 4.3) Isolate Multiparameter Initialization 49
