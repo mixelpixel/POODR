@@ -268,10 +268,11 @@ and thus will miss the opportunity to find and construct flexible public interfa
 
 
 7) Summary 83
-    "Object-oriented applications are defined by the messages that pass between objects.
-This message passing takes place along “public” interfaces; well-defined public
-interfaces consist of stable methods that expose the responsibilities of their
-underlying classes and provide maximal benefit at minimal cost.
+    "Object-oriented applications are defined by the messages that pass
+between objects. This message passing takes place along “public” interfaces;
+well-defined public interfaces consist of stable methods that expose the
+responsibilities of their underlying classes and provide maximal benefit
+at minimal cost.
     Focusing on messages reveals objects that might otherwise be overlooked.
 When messages are trusting and ask for what the sender wants instead of
 telling the receiver how to behave, objects naturally evolve public interfaces
