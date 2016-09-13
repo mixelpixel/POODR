@@ -22,12 +22,17 @@ In Ruby, knowing an objects type is knowing which messages that object will resp
 
 
 2a) Overlooking the Duck 87
-(see ch5a.rb)
+(see ch5a.rb & figure 5.1)
+This is also an example of f4.6 in Ch.4.
 
 
 2b) Compounding the Problem 87
-This example if like f4.6 in Ch.4.
-(see ch5b.rb)
+(see ch5b.rb and figure 5.2)
+This dependent-laden code will back you in a corner with no way out.
+Adding a "case" statement that switches on class solves the problem of sending
+the correct message to the correct object but causes an explosion of dependencies.
+Sequence diagrams should ALWAYS be simpler than the code they represent.\
+
 
 2c) Finding the Duck 90
 

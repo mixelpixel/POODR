@@ -1,6 +1,7 @@
 =begin
 http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
 CHAPTER 5 - Reducing Costs with Duck Typing pg.88-89
+NOTE see figure 5.2
 =end
 
 # Trip preparation becomes more complicated
