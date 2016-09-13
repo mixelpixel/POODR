@@ -4,17 +4,30 @@ Reducing Costs with Duck Typing - QUACK!!!
 
 
 1) Reducing Costs with Duck Typing 85
+The purpose of OOD is to reduce the cost of change.
+Messages are at the design center.
+As is constructing rigorous PUBLIC interfaces.
+Combine these two ideas into a technique known as DUCK TYPING.
+Not "typing" like at a keyboard, but determining a "TYPE"
+DUCK-TYPES are PUBLIC interface that aren't tied to a specific class. They are
+across-class interfaces and replace dependency on class with dependency on messages
 
 
 
 2) Understanding Duck Typing 85
+Types e.g. strings, numbers, arrays, Booleans, etc... the category of contents of
+a variable(generally used to describe data). Knowledge of the variables type allows
+the application to have an expectation about how those contents will behave.
+In Ruby, knowing an objects type is knowing which messages that object will respond to.
 
 
 2a) Overlooking the Duck 87
+(see ch5a.rb)
 
 
 2b) Compounding the Problem 87
-
+This example if like f4.6 in Ch.4.
+(see ch5b.rb)
 
 2c) Finding the Duck 90
 
