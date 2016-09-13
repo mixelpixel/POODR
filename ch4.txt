@@ -84,46 +84,135 @@ PRIVATE = CHANGEABLE, SUBJECT TO CHANGE
 
 
 4) Finding the Public Interface 63
+No cut-and-dried rules.
+Design goal: retain maximum future flexibility while writing only enough
+code to meet todays requirements.
+Ideally - reduce the cost of unanticipated change; bad interfaces raise this cost.
 
 
 4a) An Example Application: Bicycle Touring Company 63
+FastFeet offers road and mountain bike trips
+Each trip follows a specific route and is offered several or one times a year.
+Each trip has a maximum number of customers at a time.
+Each trip requires a specific number of guides who double as mechanics.
+Each trip rated according to its aerobic and technical difficulty.
+Customers have an aerobic fitness level and a technical skill level to determine
+if the trip is right for them.
+Customers may rent bikes or brings their own.
+FastFeet has a small inventory of bikes and shares a pool of bikes from
+local bike rental shops.
+USE CASE: A customer, in order to choose a trip, wants to see a list of
+available trips of appropriare difficulty, on a specific date, where rental
+bikes are available.
 
 
 4b) Constructing an Intention 64
+DOMAIN OBJECTS (nouns in the application description) which have both
+DATA and BEHAVIOR are obvious - they are persistent BUT they need not be at the
+center of DESIGN. INSTEAD think of the MESSAGES which pass between DOMAIN OBJECTS.
+What is your intention with the application in regards to BOTH the OBJECTS and
+the MESSAGES? How will the use case be satisfied?
 
 
 4c) Using Sequence Diagrams 65
+U.M.L. - UNIFIED MODELING LANGUAGE
+i.e. SEQUENCE DIAGRAMS modeling the domain objects and the messages that get sent between them.
+Instead of deciding on a class and figuring out its responsibilities,
+decide which messages need to be sent and figure out where to send them.
+MESSAGE-BASED DESIGN (not class-based design).
+Not: "I know I need this class, what should it do"
+INSTEAD: "I NEED TO SEND THIS MESSAGE, WHO SHOULD RESPOND TO IT?"
+"You don''t send messages because you have objects, you have objects
+because you send mesages"
+e.g. "Customer" should send the "suitable_trips?" message but
+"Trips" shouldn't get the message. To find out who should - sketch out the ideas!!!
 
 
 4d) Asking for “What” Instead of Telling “How” 69
+"Trip" asks for 'WHAT' and "Mechanic" knows how to get it.
+"Trip" can trust "Mechanic" - but does it?
 
 
 4e) Seeking Context Independence 71
+Dependency injection - how can "Trip" invoke the correct behavior from "Mechanic"
+without knowing what "Mechanic" does?
+What a "Trip" wants vs How that gets prepared ("Mechanic")
+***(I'm a little confused here regarding the use of "self")
 
 
 4f) Trusting Other Objects 73
+Figures 4.5, 4.6 and 4.7 demonstrate increasing object-oriented code.
+f4.5 is procedural
+    Trip to Mech: "I know what I want and I know how you do it."
+f4.6 is more OO
+    Trip to Mech: "I know what I want and I know what you do"
+f4.7 much more OO
+    Trip to Mech: "I know what I want and I trust you to do your part."
+***(it would really help to see coded examples instead of UML) :(
+f4.7 = blind trust - KEYSTONE of object-oriented design.
+This allows COLLABORATION without BINDING
 
 
 4g) Using Messages to Discover Objects 74
+Distinction between Asking For WHAT and Telling HOW
+Importance of CONTEXT and TRUST.
+f4.3 is a literal translation of the USE CASE (and "Trip" knows too much)
+f4.4 first attempt at moving responsibility away from "Trip" placed too much
+responsibility on "Customer" ("Customer" knows too much, tells others how to behave,
+and requires too much context.)
+Still need to identify WHOSE responsibility it is to deal with "Customer" message.
+"suitable_trips" becomes a PUBLIC interface METHOD at the intersection of
+"Customer", "Trip" and "Bicycle" - we'll use a "TripFinder" class to find
+"suitable_trips" while keeping the implementation PRIVATE.
 
 
 4h) Creating a Message-Based Application 76
+UML is a temp tool.
+Keep the focus on messages and build upon the public interfaces.
 
 
 
 5) Writing Code That Puts Its Best (Inter)Face Forward 76
+A "WELL-DEFINED" interface is a better goal than a "perfect" interface
 
 
 5a) Create Explicit Interfaces 76
+Every time you create a class, DECLARE its InTERFACES.
+Methods in the PUBLIC interfaces should
+1) Be explicitly identified as such
+2) Be more about WHAT than HOW
+3) Have names that won't change (as best as you can anticipate)
+4) TAKE A HASH AS AN OPTIONS PARAMETER.
+Ruby provides three relevant keywords: public, protected, and private.
+Use of these keywords serves two distinct purposes.
+First, they indicate which methods are stable and which are unstable.
+Second, they control how visible a method is to other parts of your application.
+Conveying information that a method is stable or unstable is one thing;
+attempting to control how others use it is quite another
+Guidelines more than rules.
+
+5a.1) Public, Protected, and Private Keywords
+Private - least stable, most restricted; implicit - never explicitly called
+Protected - unstable; allow explicit calls with self or sub-class of self.
+*** Code examples would really help here :(
+Public - stable and visible everywhere.
 
 
 5b) Honor the Public Interfaces of Others 78
+A dependency on a private method of an external framework
+is a form of technical debt. Avoid these dependencies.
 
 
 5c) Exercise Caution When Depending on Private Interfaces 79
+Even if you cannot avoid using a private method, you can prevent the
+method from being referenced in many places in your application.
+Depending on a private interface increases risk; keep this risk to a
+minimum by isolating the dependency
 
 
 5d) Minimize Context 79
+Construct public interfaces with an eye toward minimizing the
+context they require from others
 
 
 
