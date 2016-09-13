@@ -217,23 +217,65 @@ context they require from others
 
 
 6) The Law of Demeter 80
+https://en.wikipedia.org/wiki/Law_of_Demeter
+"Only talk with your immediate friends"
+(Q: "How do you keep a secret between three people?"
+A: "Kill the other two...") ;)
 
 
 6a) Defining Demeter 80
+Ruby i.e. "use only one dot"
+chains of dotted methods are TRAIN-WRECKS
 
 
 6b) Consequences of Violations 80
+More of a MAXIM than a LAW.
+Recall Ch2: T.R.U.E.
+Transparent: distant methods calls aren't transparent
+Reasonable: raising the cost of change is unreasonable
+Usable: requiring too much context is not easily useable
+Exemplary: train-wrecks breeding train-wrecks is not exemplary
+There are exceptions and compromises, e.g. hash.keys.sort.join(', ') passes a type check:
+hash.keys returns an ENUMERABLE
+hash.keys.sort also returns an ENUMERABLE
+hash.keys.sort.join returns a STRING
+This is only a SLIGHT DEMETER violation as the TRAIN-WRECK actually returns
+an ENUMERABLE OF STRINGS and ALL intermediate objects have the same TYPE.
+Removing the dots from this kind of code might RAISE costs.
 
 
 6c) Avoiding Violations 82
+DELEGATE a messgae - pass it on to another object, often via a WRAPPER.
+The WRAPPER method ENCAPSULATES, or hides, knowledge otherwise embodied in the msg chain.
+***delegate.rb and forwardable.rb (Rails delegate method) allow an object to
+automatically intercept a message sent to self and send it elsewhere... HMMM?
+Take care with this - it is the letter of the law, sometimes not the spirit.
 
 
 6d) Listening to Demeter 82
-
+THE MESSAGE HERE IS NOT: 'use more delegation'.
+THE MESSAGE OF DEMETER IS "EFFECTIVE DECOUPLING" "Ask for WHAT you want, not HOW you
+want it delivered."
+?
+"The train wrecks of Demeter violations are clues that there are objects whose
+public interfaces are lacking.
+Listening to Demeter means paying attention to your point of view.
+If you shift to a message-based perspective, the messages you find will become
+public interfaces in the objects they lead you to discover.
+However, if you are bound by the shackles of existing domain objects, you’ll
+end up assembling their existing public interfaces into long message chains
+and thus will miss the opportunity to find and construct flexible public interfaces."
 
 
 7) Summary 83
-
+    "Object-oriented applications are defined by the messages that pass between objects.
+This message passing takes place along “public” interfaces; well-defined public
+interfaces consist of stable methods that expose the responsibilities of their
+underlying classes and provide maximal benefit at minimal cost.
+    Focusing on messages reveals objects that might otherwise be overlooked.
+When messages are trusting and ask for what the sender wants instead of
+telling the receiver how to behave, objects naturally evolve public interfaces
+that are flexible and reusable in novel and unexpected ways."
 
 
 
