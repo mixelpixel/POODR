@@ -1,0 +1,41 @@
+http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
+CHAPTER 6 Acquiring Behavior Through Inheritance
+
+
+Acquiring Behavior Through Inheritance 105
+
+
+
+Understanding Classical Inheritance 105
+
+
+
+Recognizing Where to Use Inheritance 106
+Starting with a Concrete Class 106
+Embedding Multiple Types 109
+Finding the Embedded Types 111
+Choosing Inheritance 112
+Drawing Inheritance Relationships 114
+
+
+
+Misapplying Inheritance 114
+
+
+
+Finding the Abstraction 116
+Creating an Abstract Superclass 117
+Promoting Abstract Behavior 120
+Separating Abstract from Concrete 123
+Using the Template Method Pattern 125
+Implementing Every Template Method 127
+
+
+
+Managing Coupling Between Superclasses and Subclasses 129
+Understanding Coupling 129
+Decoupling Subclasses Using Hook Messages 134
+
+
+
+Summary 139

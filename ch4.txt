@@ -1,0 +1,91 @@
+http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
+CHAPTER 4
+Creating Flexible Interfaces
+
+
+1) Creating Flexible Interfaces 59
+
+
+
+2) Understanding Interfaces 59
+
+
+
+3) Defining Interfaces 61
+
+
+3a) Public Interfaces 62
+
+
+3b) Private Interfaces 62
+
+
+3c) Responsibilities, Dependencies, and Interfaces 62
+
+
+
+4) Finding the Public Interface 63
+
+
+4a) An Example Application: Bicycle Touring Company 63
+
+
+4b) Constructing an Intention 64
+
+
+4c) Using Sequence Diagrams 65
+
+
+4d) Asking for “What” Instead of Telling “How” 69
+
+
+4e) Seeking Context Independence 71
+
+
+4f) Trusting Other Objects 73
+
+
+4g) Using Messages to Discover Objects 74
+
+
+4h) Creating a Message-Based Application 76
+
+
+
+5) Writing Code That Puts Its Best (Inter)Face Forward 76
+
+
+5a) Create Explicit Interfaces 76
+
+
+5b) Honor the Public Interfaces of Others 78
+
+
+5c) Exercise Caution When Depending on Private Interfaces 79
+
+
+5d) Minimize Context 79
+
+
+
+6) The Law of Demeter 80
+
+
+6a) Defining Demeter 80
+
+
+6b) Consequences of Violations 80
+
+
+6c) Avoiding Violations 82
+
+
+6d) Listening to Demeter 82
+
+
+
+7) Summary 83
+
+
+
+

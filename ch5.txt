@@ -1,0 +1,60 @@
+http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
+CHAPTER 5
+Reducing Costs with Duck Typing
+
+
+1) Reducing Costs with Duck Typing 85
+
+
+
+2) Understanding Duck Typing 85
+
+
+2a) Overlooking the Duck 87
+
+
+2b) Compounding the Problem 87
+
+
+2c) Finding the Duck 90
+
+
+2d) Consequences of Duck Typing 94
+
+
+
+3) Writing Code That Relies on Ducks 95
+
+
+3a) Recognizing Hidden Ducks 96
+
+
+3b) Placing Trust in Your Ducks 98
+
+
+3c) Documenting Duck Types 98
+
+
+3d) Sharing Code Between Ducks 99
+
+
+3e) Choosing Your Ducks Wisely 99
+
+
+
+4) Conquering a Fear of Duck Typing 100
+
+
+4a) Subverting Duck Types with Static Typing 100
+
+
+4b) Static versus Dynamic Typing 101
+
+
+4c) Embracing Dynamic Typing 102
+
+
+
+5) Summary 104
+
+
