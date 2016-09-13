@@ -155,7 +155,13 @@ the application, will be under enormous pressure to never change. Ever.
 
 
 5b.4) Finding the Dependencies That Matter
-Likelihood of change vs. number of dependents
+Likelihood of change (less to more) vs. number of dependents (few to many)
+Depend on things that change less often than you do is a heuristic(sic - this is a maxim) that stands in for
+all the ideas in this section. The zones are a useful way to organize your thoughts but
+in the fog of development it may not be obvious which classes go where. Very often
+you are exploring your way to a design and at any given moment the future is unclear.
+Following this simple rule of thumb at every opportunity will cause your application
+to evolve a healthy design.
 
 
 
