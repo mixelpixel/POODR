@@ -134,19 +134,38 @@ An insignificant change here, but it affects future flexibility
 
 
 5b.1) Understanding Likelihood of Change
+the "* method?" I think she means "operator" e.g. 2.5.send(:*, 3.5) ==> 8.75
+Likely base Ruby classes will change less often than framework classes
+...which will hopefully change less often than your classes
+Likelihood of change is something to consider when choosing the direction of dependencies
 
 
 5b.2) Recognizing Concretions and Abstractions
+Abstraction vs. Concretion
+Unlike a static "type" language, it's easy to make abstract classes without
+realizing you are doing so because unlike statis-typed languages, the abstractions
+don't need to be explicitly declared.
+Abstractions tend to be more stable.
+I'm not so clear on how Metz is using "interface" and "class"
 
 
 5b.3) Avoiding Dependent-Laden Classes
+A class that, if changed, will cause changes to ripple through
+the application, will be under enormous pressure to never change. Ever.
 
 
 5b.4) Finding the Dependencies That Matter
+Likelihood of change vs. number of dependents
 
 
 
 6) Summary 57
-
+Dependency management is core to creating future-proof applications. Injecting
+dependencies creates loosely coupled objects that can be reused in novel ways.
+Isolating dependencies allows objects to quickly adapt to unexpected changes.
+Depending on abstractions decreases the likelihood of facing these changes.
+The key to managing dependencies is to control their direction. The road to
+maintenance nirvana is paved with classes that depend on things that change less
+often than they do.
 
 
