@@ -15,19 +15,71 @@ How then to create flexible interfaces that allow applications to grow and chang
 
 
 2) Understanding Interfaces 59
+If messages left trails - what would the map of your application look like?
+A woven mat? ...each object conneced to every other?
+A set of islands? ...with bridges between them?
+The former is too difficult to re-use, each object exposing too much of itself.
+The former objects and methods REVEAL TOO MUCH to each other.
+The latter are more portable, objects can be extracted easily from the whole.
+The problem is not what each class does (e.g. dependency injection or
+single responsibility), but what it reveals.
+The exposed methods comprise the class's PUBLIC INTERFACE.
+Classes implement methods, some are intended to be used by others and these are
+the methods which make up the public interface.
+Another kind of 'interface' spans across classes and is independent of any
+single class (the set of messages define the interface - a 'virtual' class - see ch.5)
+BUT the rest of this chapter will ask of methods within a class:
+HOW and WHAT to expose to others?
 
 
 
 3) Defining Interfaces 61
+RESTAURANT KITCHEN METAPHOR: The PUBLIC interface is what customers are
+expected to use - they aren't supposed to go in the kitchen and stir the soup!
+PUBLIC vs PROVATE interface, e.g.
+The menu is the customers public interface.
+The kitchen is the private and off-limits.
+Things happening within the kitchen are "invisible" to the customer.
+Using a menu lets each customer ask for WHAT they want
+without having to know HOW to make it.
+THINK of each class like the kitchen - it exists to fulfill a single
+responsibility BUT implements many methods.
+These methods may vary in SCALE and GRANULARITY and range from
+BROAD, GENERAL methods to TINY UTILITY methods. BROAD methods can
+expose the main responsibility of the class, TINY utility methods
+are usually meant to ONLY be used internally - the former PUBLIC, the
+latter: PRIVATE.
 
 
 3a) Public Interfaces 62
+The methods which make up the public interface of a class comprise the
+face the class presents to the world. These methods:
+1) Reveal the classes primary responsibility
+2) Are expected to be invoked by others
+3) Will not change on a whim
+4) Are SAFE for others to depend on
+5) Are thoroughly DOCUMENTED in the TESTS.
 
 
 3b) Private Interfaces 62
+All other methods in the class are part of the classes private interface. They:
+1) Handle implementation details
+2) Are not expected to be sent by other objects
+3) Can change for ANY reason whatsoever
+4) Are UNSAFE for others to depend upon
+5) May NOT be referenced in the tests.
 
 
 3c) Responsibilities, Dependencies, and Interfaces 62
+Review Ch2: Designing Classes with a Single Responsibility.
+Creating classes with a single PURPOSE & the things it does
+(its responsibilities) allows it to fulfill that purpose. There is
+a correspondence between PUBLIC methods and these responsibilities.
+Review Ch3: Managing Dependencies. A class should depend ONLY on classes
+which change less often that it does. NOW that every class has PUBLIC and PRIVATE parts,
+depending on less changeable things applies to methods within a class.
+PUBLIC = STABLE, DEPENDABLE
+PRIVATE = CHANGEABLE, SUBJECT TO CHANGE
 
 
 
