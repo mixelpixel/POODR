@@ -4,6 +4,13 @@ Creating Flexible Interfaces
 
 
 1) Creating Flexible Interfaces 59
+As important as classes are to design, the application is better
+described as the sum of its MESSAGES rather than its CLASSES. It is made
+up of classes, but defined by the messages which pass between objects.
+Design deals with WHAT objects "know" (their RESPONSIBILITIES), as well as
+WHO objects know (their DEPENDENCIS) and HOW they talk to one another.
+The conversation between objects takes place using their INTERFACES.
+How then to create flexible interfaces that allow applications to grow and change?
 
 
 
