@@ -224,6 +224,7 @@ A: "Kill the other two...") ;)
 
 
 6a) Defining Demeter 80
+https://en.wikipedia.org/wiki/Demeter
 Ruby i.e. "use only one dot"
 chains of dotted methods are TRAIN-WRECKS
 
