@@ -38,16 +38,44 @@ Sequence diagrams should ALWAYS be simpler than the code they represent.
 (see ch5c.rb)
 
 2d) Consequences of Duck Typing 94
+The concreteness of the first example makes it simple to understand but dangerous to extend.
+The Duck Typed is more abstract, demanding more understanding, but it is easier to extend.
+concretion vs. abstraction
+Treat objects as if they are defined by their behavior rather than their class
 
 
-2d.1) POLYMORPHISM
+2d.1) POLYMORPHISM 95
+http://www.etymonline.com/index.php?term=polymorphous
+Morph - from the Greek for form, shape
+Poly - many
+Darwin's finches are polymorphic: a single species with many forms.
+In OOP polymorphism refers to the ability of many different objects to respond to
+the same message. Senders don't have to care about the class of the receiver;
+receivers supply their own specific version of behavior.
+A Single Message Thus Has Many (POLY) Forms (MORPHS).
+Duck typing, Inheritance and behavior sharing via Ruby Modules are ways to achieve polymorphism.
+Objects ought to be well-behaved for effective polymorphism.
 
 
 
 3) Writing Code That Relies on Ducks 95
+Duck typing relies on recognizing places the application can benefit from "across-class interfaces"
 
 
 3a) Recognizing Hidden Ducks 96
+The following can be replaced with DUCKS:
+A) CASE STATEMENTS THAT SWITCH ON CLASS
+B) KIND_OF? and IS_A?
+C) RESPONDS_TO?
+
+
+3a.1) Case Statements That Switch on Class 96
+
+
+3a.2) kind_of? and is_a? 97
+
+
+3a.3) responds_to? 97
 
 
 3b) Placing Trust in Your Ducks 98
