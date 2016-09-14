@@ -119,18 +119,47 @@ Monkey-patxh at your own risk.
 
 
 4) Conquering a Fear of Duck Typing 100
+Static Categorizing vs Dynamic Categorizing
+OT - Category Theory: https://youtu.be/o6L6XeNdd_k
 
 
 4a) Subverting Duck Types with Static Typing 100
+Statically typed languages require explicit declarations of each variable and
+every method parameter.
+Dynamically typed languages omit this requirement.
+Duck typing relies on identifying the stable abstractions on which your code can safely depend.
 
 
 4b) Static versus Dynamic Typing 101
+Static Typing advantages:
+A) The compiler unearths type errors at compile time.
+B) Visible type information serves as documentation.
+C) Compiled code is optimized to run quickly.
+Static Typing Assumptions
+A) Runtime type errors will occur unless the compiler performs type checks.
+B) Programmers will not otherwise understand the code; they cannot infer an object’s type from its context.
+C) The application will run too slowly without these optimizations.
+Dynamic Typing Advantages
+A) Code is interpreted and can be dynamically loaded; there is no compile/make cycle.
+B) Source code does not include explicit type information.
+C) Metaprogramming is easier.
+Dynamic Typing Assumptions
+A) Overall application development is faster without a compile/make cycle.
+B) Programmers find the code easier to understand when it does not contain type declarations; they can infer an object’s type from its context.
+C) Metaprogramming is a desirable language feature.
 
 
 4c) Embracing Dynamic Typing 102
+Duck Typing is built upon dynamic typing - EMBRACE THE DYNAMISM
 
 
 
 5) Summary 104
+    "Messages are at the center of object-oriented applications and they pass among objects
+along public interfaces. Duck typing detaches these public interfaces from specific classes,
+creating virtual types that are defined by what they do instead of by who they are.
+    Duck typing reveals underlying abstractions that might otherwise be invisible.
+Depending on these abstractions reduces risk and increases flexibility, making your
+application cheaper to maintain and easier to change."
 
 
