@@ -16,16 +16,19 @@ what is the purpose of the program?
 what goals does it service?
 how to achieve those goals elegantly and effectively considering time and cost.
 
+
 2a) The Problem Design Solves 2
 It's easy to keep plates spinning when friction and gravity aren't a concern.
 Note: friction and gravity are always a part of the world we live and program in.
 Designing and producing software while anticipating and allowing for inevitable changes
+
 
 2b) Why Change Is Hard 3
 objects, the messages that pass between them and the resulting dependencies.
 What and how does the sender know to get which messages to which receivers?
 How to manage these dependencies?
 Design: arranging dependencies to accomodate and tolerate change
+
 
 2c) A Practical Definition of Design 4
 Design: the art of arranging code
@@ -47,6 +50,7 @@ Not a fixed set of rules.
 A journey along a branching path.
 Sometimes earlier choices close off options.
 Sometimes they open access to others.
+
 
 3a) Design Principles 5
 S.O.L.I.D. = 
@@ -84,6 +88,7 @@ https://www.cs.umd.edu/~basili/publications/technical/T102.pdf
 "Principal Components of Orthogonal Object-Oriented Metrics":
 http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=CB520F14993302E2669C6BD3F4C0AC90?doi=10.1.1.95.6760&rep=rep1&type=pdf
 
+
 3b) Design Patterns 6
 "Gang of Four" Design patterns: http://www.uml.org.cn/c++/pdf/DesignPatterns.pdf
 Erich Gamma, Richard Helm, Ralph Johnson, and Jon Vlissides
@@ -99,6 +104,7 @@ Software is like custom furniture: principles and patterns are like woodworking 
 Knowing how you want the software to look doesn't make it build itself.
 The end result reflects upon the programmers experience with using the tools.
 
+
 4a) How Design Fails 7
 Too little design and too much design.
 Instead try just enough design just in time:
@@ -107,12 +113,14 @@ Requires a feedback loop with customers needs and review of goals.
 AGILE:
 http://agilemanifesto.org/principles.html
 
+
 4b) When to Design 8
 Show software sooner than later
 build in tiny increments
 collaborate w/customer
 iterate towards integration of OOd functions with goals
 Avoid B.U.F.D. Big Up Front Design; but don't avoid design altogether!!!
+
 
 4c) Judging Design 10
 Don't judge by S.L.O.C. Source Lines Of Code
@@ -126,8 +134,10 @@ a compromise you will face. Don't let designing keep you from delivering softwar
 5)A Brief Introduction to Object-Oriented Programming 11
 Object oriented applications are made up of objects and the messages that pass between them.
 
+
 5a) Procedural Languages 12
 chasm between data and behavior
+
 
 5b) Object-Oriented Languages 12
 data and behavior combined into an object
