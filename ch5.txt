@@ -70,24 +70,51 @@ C) RESPONDS_TO?
 
 
 3a.1) Case Statements That Switch on Class 96
+(see ch5d.rb)
+(see ch5b.rb and figure 5.2)
+A case statement switching on the class names of domain objects
+What is it that all these case statements want from each argument?
+The answer suggests the message that needs sending and thus begins
+to define the underlying duck type.
 
 
 3a.2) kind_of? and is_a? 97
+(see ch5e.rb)
+These are synonymous class cheking methods.
+This code does the same as the previous block and causes the same problems.
 
 
 3a.3) responds_to? 97
+(see ch5f.rb)
+Depending on class names isn't a good practice, but responds_to? doesn't do quite enough.
+The explicit class names are gone, but not the dependencies.
 
 
 3b) Placing Trust in Your Ducks 98
+The above examples of Recognizing Hidden ducks are all saying,
+"I know who you are and because of that I know what you do."
+and demonstrate a Lack of TRUST.
 
 
 3c) Documenting Duck Types 98
+This chapters example is a SIMPLE kind of Duck - several different
+classes implementing the same method and easy to abstract.
+"When you create duck types you must both document and test their public interfaces.
+Fortunately, good tests are the best documentation, so you are already halfway
+done; you need only write the tests. See Chapter 9, Designing Cost-Effective Tests"
 
 
 3d) Sharing Code Between Ducks 99
+Classes which implement duck types need to share some behavior in common. 
+See ch.7 for writing ducks that share code.
 
 
 3e) Choosing Your Ducks Wisely 99
+The above considerations are only guidelines. kind_of? and responds_to? when
+querying base classes can be acceptable as the base Ruby classes won't change
+as much as the classes you are writing for your app. Base classes are safer dependencies.
+Use your best judgement to LOWER COSTS with design.
+Monkey-patxh at your own risk.
 
 
 
