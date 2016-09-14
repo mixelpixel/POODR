@@ -15,7 +15,7 @@ they require collaboration
 
 2) Understanding Dependencies 36
 (see ch3a.rb)
-"Gear" has at least four dependencies on "Wheel"
+"Gear" has at least four dependencies upon "Wheel"
 
 
 2a) Recognizing Dependencies 37
@@ -189,5 +189,6 @@ Depending on abstractions decreases the likelihood of facing these changes.
 The key to managing dependencies is to control their direction. The road to
 maintenance nirvana is paved with classes that depend on things that change less
 often than they do.
+
 
 
