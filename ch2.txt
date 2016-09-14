@@ -14,9 +14,11 @@ Standing targets will move
 2) Deciding What Belongs in a Class 16
 "Get organizized" where to put the code?
 
+
 2a) Grouping Methods into Classes 16
 Methods are defined in class & classes can "box in" & constrain imagination
 Design is the art of preserving changeability (for actionability)
+
 
 2b) Organizing Code to Allow for Easy Changes 16
 Easily changeable code = "Children should be polite" Easier said than done
@@ -37,6 +39,7 @@ Step 1 to TRUE code is making sure each class has a single, well-defined respons
 3) Creating Classes That Have a Single Responsibility 17
 "A class should do the smallest possible useful thing; that is, it should have a single responsibility."
 
+
 3a) An Example Application: Bicycles and Gears 17
 Small gears: easy to pedal, not very fast
 Large gears: harder to pedal, get you moving with more speed
@@ -56,8 +59,10 @@ NOTE: "Inheritance" - Gear is a subclass of "Object" in Ruby and inherits many o
 (see ch2c_Gear.wheel_class.rb)
 Initialize variables have changed and old method does not work now, but it's so small it can be ignored for now.
 
+
 3b) Why Single Responsibility Matters 21
 Minimal entanglements in the program and within each class
+
 
 3c) Determining If a Class Has a Single Responsibility 22
 COHESION: Can you describe a class with one sentence without "and" or "or"?
@@ -65,6 +70,7 @@ The Single Responsibility Principle (SRP) has its roots in
 Rebecca Wirfs-Brock and Brian Wilkerson’s idea of
 Responsibility-Driven Design (RDD)
 Everything in a class be related to it's purpose
+
 
 3d) Determining When to Make Design Decisions 22
 Resist making design decisions prematurely
@@ -74,6 +80,7 @@ Cost-effectiveness of waiting for more information
 
 4) Writing Code That Embraces Change 24
 How to arrange the code so that the Class and methods will be easy to change?
+
 
 4a) Depend on Behavior, Not Data 24
 Behavior is captured in methods and invoked by sending messages.
@@ -107,6 +114,7 @@ wheelify does; it creates little lightweight objects that respond to rim and tir
 "wheelify" trades indexing into a structure for sending messages to an object;
 it isolates messy structural info and DRYs out the code
 THIS MAKES THE CLASS MORE TOLERANT OF CHANGE
+
 
 4b) Enforce Single Responsibility Everywhere 29
 Create classes with single responsibilities
