@@ -31,13 +31,16 @@ This is also an example of f4.6 in Ch.4.
 This dependent-laden code will back you in a corner with no way out.
 Adding a "case" statement that switches on class solves the problem of sending
 the correct message to the correct object but causes an explosion of dependencies.
-Sequence diagrams should ALWAYS be simpler than the code they represent.\
+Sequence diagrams should ALWAYS be simpler than the code they represent.
 
 
 2c) Finding the Duck 90
-
+(see ch5c.rb)
 
 2d) Consequences of Duck Typing 94
+
+
+2d.1) POLYMORPHISM
 
 
 
