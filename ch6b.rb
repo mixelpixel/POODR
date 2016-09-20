@@ -54,4 +54,8 @@ puts 'bike.spares are: ' + bike.spares.to_s
 puts 'bike.tape_color is: ' + bike.tape_color.to_s  # <-- NOTE the "nil" is not printed
 p bike.tape_color                                   # <-- NOTE the "nil" IS printed
 puts bike.tape_color                                # <-- NOTE the "nil" is not printed
+puts bike.tape_color.nil?                           # <-- true
+puts bike.nil?                                      # <-- false
 puts bike.tape_color.class
+puts bike.style
+

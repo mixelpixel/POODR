@@ -32,19 +32,45 @@ What if we add a mountain bike option?
 3b) Embedding Multiple Types 109
 Not the best solution to simple add options to the existing CONCRETE road bike class, e.g.
 (see ch6b.rb)
+NOTE: that adding any other style(s) will require changing the if-conditional block
+ALSO: the spares method started out containing embedded default strings and now some
+of these strings are on BOTH sides of the IF. Lots to maintain manually... room for errors.
+ALSO: how would you predict if a specific part has been initialized?
+Bicycle has too many responsibilities and can't be reused as is.
+"This code contains an if statement that checks an attribute that holds the category
+of self to determine what message to send to self.  This should bring back memories of a
+pattern discussed in the previous chapter on duck typing, where you saw an if statement
+that checked the class of an object to determine what message to send to that object."
+Hmmm... "class of an object" as a specific case of "an attribute that holds
+the category of self." e.g. “I know who you are and because of that I know what you do.”
 
 
 3c) Finding the Embedded Types 111
+The variable "style" can be thought of as a TYPE or CATEGORY and indicating a SUB-class
+or a "highly related TYPE". INHERITANCE addresses highly related types which share
+common behavior but differ along some aspect.
 
 
 3d) Choosing Inheritance 112
+Objects receive messages. They either respond directly OR pass the message to some other object
+for a response. Inheritance provides a way to define two objects as having a relationship such
+that when the first gets a message it doesn't understand, it automatically passes (fwds, delegates)
+it to the second. Ruby does not do "multiple inheritance" - it does "single inheritance", i.e.
+a SUPER-class may have many SUB-classes, but each SUB-class only has one SUPER-class.
+Msg fwd'ing cia "classical" inheritance is between classes.
+Duck types cut across classes so the don't use classical inheritance. Duck types shae code
+via Ruby modules (see ch7)
+"Object" is the default SUPER-class
 
 
 3e) Drawing Inheritance Relationships 114
-
+U.M.L. = Unified Modeling Language
 
 
 4) Misapplying Inheritance 114
+A poor example of how to implement a subclass (back to initial Bicycle class)
+(see ch6c.rb)
+NOTE: that MountainBike's initialize and spare OVERRIDE Bicycle's initialize and spare methods.
 
 
 
