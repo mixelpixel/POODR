@@ -24,11 +24,14 @@ How to know when you have a problem which inheritance solves?
 
 
 3a) Starting with a Concrete Class 106
-(see ch6a.rb)
- 
+(see ch6a.rb) - basic road bike, a CONCRETE class.
+"the spares method commits the sin of embedding default strings directly inside itself" 
+What if we add a mountain bike option?
 
 
 3b) Embedding Multiple Types 109
+Not the best solution to simple add options to the existing CONCRETE road bike class, e.g.
+(see ch6b.rb)
 
 
 3c) Finding the Embedded Types 111

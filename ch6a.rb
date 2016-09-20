@@ -7,15 +7,15 @@ class Bicycle
   attr_reader :size, :tape_color
   def initialize(args)
     @size       = args[:size]
-    @tape_color = args[:size]
+    @tape_color = args[:tape_color]
   end
 
 
   # every bike has the same defaults
   # for tire and chain size
-  del spares
-    { chain:       '10-speed'
-      tire_size:   '23'
+  def spares
+    { chain:       '10-speed',
+      tire_size:   '23',
       tape_color:  tape_color}
   end
 
@@ -30,6 +30,11 @@ bike.size     # -> 'M'
 bike.spares
 # => {:tire_size   => 'M',
 #     :chain       => '10-speed',
-#     :tape_color  +. 'red'}
+#     :tape_color  => 'red'}
+
+puts 'bike is: ' + bike.to_s
+puts 'bike.class is: ' + bike.class.to_s
+puts 'bike_size is: ' + bike.size.to_s
+puts 'bike.spares are: ' + bike.spares.to_s
 
 
