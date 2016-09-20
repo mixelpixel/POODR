@@ -1,41 +1,80 @@
 http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
-CHAPTER 6 Acquiring Behavior Through Inheritance
-
-
-Acquiring Behavior Through Inheritance 105
-
-
-
-Understanding Classical Inheritance 105
+CHAPTER 6
+Acquiring Behavior Through Inheritance
 
 
 
-Recognizing Where to Use Inheritance 106
-Starting with a Concrete Class 106
-Embedding Multiple Types 109
-Finding the Embedded Types 111
-Choosing Inheritance 112
-Drawing Inheritance Relationships 114
+1) Acquiring Behavior Through Inheritance 105
+Well designed application are built with reuseable code. Small, trust-worthy
+self-contained objects with minimal context, clear interfaces and
+injected dependencies are reuseable. And now for: INHERITANCE.
 
 
 
-Misapplying Inheritance 114
+2) Understanding Classical Inheritance 105
+The abstraction of Object Oriented INHERITANCE is AUTOMATIC MESSAGE DELEGATION
+Delegation can be done according to CLASSical relationships, e.g.
+SUPER-class and SUB-class
+Delegation can also be handles in Ruby through MODULES (see ch7)
 
 
 
-Finding the Abstraction 116
-Creating an Abstract Superclass 117
-Promoting Abstract Behavior 120
-Separating Abstract from Concrete 123
-Using the Template Method Pattern 125
-Implementing Every Template Method 127
+3) Recognizing Where to Use Inheritance 106
+How to know when you have a problem which inheritance solves?
+
+
+3a) Starting with a Concrete Class 106
+(see ch6a.rb)
+ 
+
+
+3b) Embedding Multiple Types 109
+
+
+3c) Finding the Embedded Types 111
+
+
+3d) Choosing Inheritance 112
+
+
+3e) Drawing Inheritance Relationships 114
 
 
 
-Managing Coupling Between Superclasses and Subclasses 129
-Understanding Coupling 129
-Decoupling Subclasses Using Hook Messages 134
+4) Misapplying Inheritance 114
 
 
 
-Summary 139
+5) Finding the Abstraction 116
+
+
+5a) Creating an Abstract Superclass 117
+
+
+5b) Promoting Abstract Behavior 120
+
+
+5c) Separating Abstract from Concrete 123
+
+
+5d) Using the Template Method Pattern 125
+
+
+5e) Implementing Every Template Method 127
+
+
+
+6) Managing Coupling Between Superclasses and Subclasses 129
+
+
+6a) Understanding Coupling 129
+
+
+6b) Decoupling Subclasses Using Hook Messages 134
+
+
+
+7) Summary 139
+
+
+
