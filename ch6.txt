@@ -108,6 +108,17 @@ http://stackoverflow.com/questions/2487333/fastest-one-liner-way-to-list-attr-ac
 
 
 5c) Separating Abstract from Concrete 123
+(see ch6f.rb)
+In the last code example (ch6e.rb) I commented out the "spares" methods. RoadBike.spares works as is, but
+MountainBike.spares invokes a "NoMethodError" because it makes an unsupported call to "super.merge()" - there
+is no "spares" method in the superclass: Bicycle.
+How to promote the "spares" method to superclass: Bicycle? Abstractions get promoted, concretions stay in RoadBike.
+1) Bicycles have a chain and a tire size.
+2) All bicycles share the same default for chain.
+3) Subclasses provide their own default for tire size.
+4) Concrete instances of subclasses are permitted to ignore defaults and supply
+instance-specific values.
+
 
 
 5d) Using the Template Method Pattern 125
