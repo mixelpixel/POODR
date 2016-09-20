@@ -75,9 +75,18 @@ NOTE: that MountainBike's initialize and spare OVERRIDE Bicycle's initialize and
 
 
 5) Finding the Abstraction 116
+Instead of making Bicycle class a road bike and then subclassing MountainBike,
+make the Bicycle class general (abstract) and use the subclasses for the types
+of bikes (e.g. road, mountain, etc.)
+SUB-classes are SPECIALIZATIONS of SUPER-classes
 
 
 5a) Creating an Abstract Superclass 117
+Ch3 defined abstraction as being disassociated from any specific instance.
+Bicycle as a SUPER-class won't define a complete bike - just the parts that all bikes share.
+It's unlikely that you'd ever invoke "Bicycle.new"
+Some languages (e.g. Java) can declare a class as "abstract", Ruby is more trusting.
+(see ch6d.rb)
 
 
 5b) Promoting Abstract Behavior 120
@@ -104,6 +113,4 @@ NOTE: that MountainBike's initialize and spare OVERRIDE Bicycle's initialize and
 
 
 7) Summary 139
-
-
 
