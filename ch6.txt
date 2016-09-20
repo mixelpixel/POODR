@@ -90,6 +90,20 @@ Some languages (e.g. Java) can declare a class as "abstract", Ruby is more trust
 
 
 5b) Promoting Abstract Behavior 120
+The two methods common to all bikes are: size and spare.
+(see ch6e.rb)
+NOTE: A subclass (e.g. RoadBike) can implement or override an inheritance
+NOTE: push-everything-down-and-then-pull-some-things-up strategy is an important
+part of refactoring (e.g. the code for size)
+Promotion failures thus have low consequences.
+The consequences of a demotion failure can be widespread and severe.
+Promote abstractions rather than demote concretions.
+CODE NOTES:
+WHY THE args={} ??? What is going on there?
+How would you send a message to display all attributes?
+http://stackoverflow.com/questions/10006889/how-to-get-attributes-that-were-defined-through-attr-reader-or-attr-accessor
+http://stackoverflow.com/questions/2487333/fastest-one-liner-way-to-list-attr-accessors-in-ruby
+Ah... ".inspect"
 
 
 5c) Separating Abstract from Concrete 123
