@@ -43,7 +43,7 @@ class MountainBike < Bicycle
   end                      # <- MountainBike is now a SUBCLASS of Bicycle
 
   # def spares
-    # super.merge(rear_shock: rear_shock)  #<- NoMethodError
+    # super.merge({rear_shock: rear_shock})  #<- what are the curlies doing?
   # end
 end
 
@@ -62,7 +62,8 @@ mountain_bike = MountainBike.new(
                   rear_shock:   'Fox')
 
 # puts mountain_bike.size                     # => "S"
-
+# puts mountain_bike.rear_shock
+# puts
 
 puts road_bike.inspect
 puts mountain_bike.inspect

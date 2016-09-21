@@ -1,6 +1,6 @@
 =begin
 http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
-CHAPTER 6 - Acquiring Behavior Through Inheritance, Using the Template Method Pattern pg. 126-127
+CHAPTER 6 - Acquiring Behavior Through Inheritance, Understanding Coupling pg. 130
 =end
 
 
@@ -13,8 +13,13 @@ class Bicycle
     @tire_size = args[:tire_size] || default_tire_size
   end
 
-  def default_chain                 # <- COMMON DEFAULT
+  def default_chain
     '10-speed'
+  end
+
+  def default_tire_size
+    raise NotImplementedError,                    # <- This might be sufficient (without ",")
+          "This #{self.class} cannot respond to:" # <- But this can add more information 
   end
 end
 
@@ -28,12 +33,12 @@ class RoadBike < Bicycle
     super(args)
   end
 
-  def default_tire_size             # <- SUBCLASS DEFAULT        
+  def default_tire_size
     '23'
   end
 
   # def spares
-    # { tape_color:   tape_color}   # <- concrete - only RoadBikes have tape_color
+    # { tape_color:   tape_color}
   # end
 
   # ...
@@ -50,14 +55,24 @@ class MountainBike < Bicycle
     super(args)
   end
 
-  def default_tire_size             # <- SUBCLASS DEFAULT
+  def default_tire_size
     '2.1'
   end
 
-  # def spares
-    # super.merge({rear_shock: rear_shock})  #<- what are the curlies doing?s
-  # end
+  def spares
+    super.merge({rear_shock: rear_shock})              # <- NoMethodError
+  end
 end
+
+
+
+class RecumbentBike < Bicycle
+  def default_chain
+    '9-speed'
+  end
+end
+
+# bent = RecumbentBike.new # <- NotImplementedError
 
 
 
@@ -76,6 +91,7 @@ mountain_bike = MountainBike.new(
 
 puts mountain_bike.tire_size        # => '2.1'
 puts mountain_bike.chain            # => "10-speed"
+puts mountain_bike.spares                                   # <- NoMethodError
 puts
 
 puts road_bike.inspect.split(' ')

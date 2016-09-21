@@ -55,7 +55,7 @@ class MountainBike < Bicycle
   end
 
   # def spares
-    # super.merge(rear_shock: rear_shock)  #<- NoMethodError
+    # super.merge({rear_shock: rear_shock})  #<- what are the curlies doing?
   # end
 end
 
