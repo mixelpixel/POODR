@@ -167,11 +167,44 @@ The code is okay, but not exactly "super"...
 "   When a subclass sends super it’s effectively declaring that it knows the algorithm;
 it depends on this knowledge. If the algorithm changes, then the subclasses may
 break even if their own specializations are not otherwise affected."
+"super" sends are required from ALL subclass initializations and "spares" methods
+(see ch6n.rb)
 
 
 6b) Decoupling Subclasses Using Hook Messages 134
+One final refactoring: instead of ALLOWING subclasses to know the algorithm and REQUIRING
+that they send super, SUPERCLASSes can instead send HOOK messages.
+HOOK msgs exist to provide subclasses a place to contribute information.
+This way subclasses don't have to know as much and the superclass is in control.
+Superclass send post_initialize, implements a matching method (which does nothing)
+and Subclass overrides post_initialization
+(see ch6o.rb)
+"RoadBike is still responsible for what initialization it needs but is no longer
+responsible for when its initialization occurs"
+(see ch6p.rb)
 
 
 
 7) Summary 139
+"Inheritance solves the problem of related types that share a great deal of common
+behavior but differ across some dimension. It allows you to isolate shared code and
+implement common algorithms in an abstract class, while also providing a structure
+that permits subclasses to contribute specializations.
+    The best way to create an abstract superclass is by pushing code up from concrete
+subclasses. Identifying the correct abstraction is easiest if you have access to at least
+three existing concrete classes. This chapter’s simple example relied on just two but in
+the real world you are often better served to wait for the additional information that
+three cases supply.
+    Abstract superclasses use the template method pattern to invite inheritors to supply
+specializations, and use hook methods to allow these inheritors to contribute these
+specializations without being forced to send super. Hook methods allow subclasses to
+contribute specializations without knowing the abstract algorithm. They remove the
+need for subclasses to send super and therefore reduce the coupling between layers of
+the hierarchy and increase its tolerance for change.
+    Well-designed inheritance hierarchies are easy to extend with new subclasses, even
+for programmers who know very little about the application. This ease of extension is
+inheritance’s greatest strength. When your problem is one of needing numerous specializations
+of a stable, common abstraction, inheritance can be an extremely low-cost
+solution."
+
 
