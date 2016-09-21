@@ -15,9 +15,6 @@ Writing Inheritable Code 158
 Recognize the Antipatterns 158
 Insist on the Abstraction 159
 Honor the Contract 159
-xii Contents
-www.it-ebooks.info
-ptg11539634
 Use the Template Method Pattern 160
 Preemptively Decouple Classes 161
 Create Shallow Hierarchies 161
