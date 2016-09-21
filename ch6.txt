@@ -122,13 +122,29 @@ instance-specific values.
 
 
 5d) Using the Template Method Pattern 125
+This next change alters Bicycle’s initialize method to send messages to get defaults.
 Defining a basic structure in the superclass and sending messages to acquire
 subclass-specific contributions is known as the TEMPLATE METHOD pattern
 (see ch6g.rb)
+See the boob-trap?
 
 
 5e) Implementing Every Template Method 127
-
+Bicycle’s initialize method sends default_tire_size but Bicycle itself does
+not implement it.  Bicycle imposes a requirement upon its subclasses
+that is not obvious from a glance at the code
+(see ch6h.rb)
+NOTE: Any class that uses the template method pattern must supply an implementation
+for every message it sends
+(see ch6i.rb)
+NOTE: my Ruby install shows a slightly different error msg and both declare the method:
+Without any message:
+ch6i.rb:21:in `default_tire_size': NotImplementedError (NotImplementedError)
+With a messgae:
+ch6i.rb:21:in `default_tire_size': This RecumbentBike cannot respond to: (NotImplementedError)
+POODR with messgae:
+NotImplementedError: This RecumbentBike cannot respond to: 'default_tire_size'
+Reads a little better in irb. Whatevs...
 
 
 6) Managing Coupling Between Superclasses and Subclasses 129
