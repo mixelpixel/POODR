@@ -4,13 +4,23 @@ Sharing Role Behavior with Modules
 
 
 1) Sharing Role Behavior with Modules 141
+Inheritance is great, but: How to combine the qualities of two existing SUBclasses?
+We can use the techniques of inheritance to share a ROLE. We can use a Ruby module
+to define a common role from which to write inheritable code.
 
 
 
 2) Understanding Roles 142
+(I loathe Metz's use of "orthogonal" here.)
+Some problems require sharing behavior among otherwise unrelated objects.
+This common behavior is a ROLE an object plays and is not as obvious a
+relationship as SUBclass < SUPERclass.
+CAVEAT: Using ROLES can create dependencies among the involved objects which will
+introduce risks to design options.
 
 
 2a) Finding Roles 142
+
 
 
 2b) Organizing Responsibilities 143
