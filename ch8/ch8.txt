@@ -1,0 +1,21 @@
+http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
+CHAPTER 8 Combining Objects with Composition
+
+
+Combining Objects with Composition 163
+Composing a Bicycle of Parts 164
+Updating the Bicycle Class 164
+Creating a Parts Hierarchy 165
+Composing the Parts Object 168
+Creating a Part 169
+Making the Parts Object More Like an Array 172
+Manufacturing Parts 176
+Creating the PartsFactory 177
+Leveraging the PartsFactory 178
+The Composed Bicycle 180
+Deciding Between Inheritance and Composition 184
+Accepting the Consequences of Inheritance 184
+Accepting the Consequences of Composition 187
+Choosing Relationships 188
+Summary 190
+
