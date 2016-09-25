@@ -206,5 +206,5 @@ for programmers who know very little about the application. This ease of extensi
 inheritance’s greatest strength. When your problem is one of needing numerous specializations
 of a stable, common abstraction, inheritance can be an extremely low-cost
 solution."
-
+Couldn't have said it better myself!
 
