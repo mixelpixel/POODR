@@ -1,0 +1,210 @@
+http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
+CHAPTER 6
+Acquiring Behavior Through Inheritance
+
+
+
+1) Acquiring Behavior Through Inheritance 105
+Well designed application are built with reuseable code. Small, trust-worthy
+self-contained objects with minimal context, clear interfaces and
+injected dependencies are reuseable. And now for: INHERITANCE.
+
+
+
+2) Understanding Classical Inheritance 105
+The abstraction of Object Oriented INHERITANCE is AUTOMATIC MESSAGE DELEGATION
+Delegation can be done according to CLASSical relationships, e.g.
+SUPER-class and SUB-class
+Delegation can also be handled in Ruby through MODULES (see ch7)
+
+
+
+3) Recognizing Where to Use Inheritance 106
+How to know when you have a problem which inheritance solves?
+
+
+3a) Starting with a Concrete Class 106
+(see ch6a.rb) - basic road bike, a CONCRETE class.
+"the spares method commits the sin of embedding default strings directly inside itself" 
+What if we add a mountain bike option?
+
+
+3b) Embedding Multiple Types 109
+Not the best solution to simple add options to the existing CONCRETE road bike class, e.g.
+(see ch6b.rb)
+NOTE: that adding any other style(s) will require changing the if-conditional block
+ALSO: the spares method started out containing embedded default strings and now some
+of these strings are on BOTH sides of the IF. Lots to maintain manually... room for errors.
+ALSO: how would you predict if a specific part has been initialized?
+Bicycle has too many responsibilities and can't be reused as is.
+"This code contains an if statement that checks an attribute that holds the category
+of self to determine what message to send to self.  This should bring back memories of a
+pattern discussed in the previous chapter on duck typing, where you saw an if statement
+that checked the class of an object to determine what message to send to that object."
+Hmmm... "class of an object" as a specific case of "an attribute that holds
+the category of self." e.g. “I know who you are and because of that I know what you do.”
+
+
+3c) Finding the Embedded Types 111
+The variable "style" can be thought of as a TYPE or CATEGORY and indicating a SUB-class
+or a "highly related TYPE". INHERITANCE addresses highly related types which share
+common behavior but differ along some aspect.
+
+
+3d) Choosing Inheritance 112
+Objects receive messages. They either respond directly OR pass the message to some other object
+for a response. Inheritance provides a way to define two objects as having a relationship such
+that when the first gets a message it doesn't understand, it automatically passes (fwds, delegates)
+it to the second. Ruby does not do "multiple inheritance" - it does "single inheritance", i.e.
+a SUPER-class may have many SUB-classes, but each SUB-class only has one SUPER-class.
+Msg fwd'ing via "classical" inheritance is between classes.
+Duck types cut across classes so the don't use classical inheritance. Duck types share code
+via Ruby modules (see ch7)
+"Object" is the default SUPER-class
+
+
+3e) Drawing Inheritance Relationships 114
+U.M.L. = Unified Modeling Language
+
+
+
+4) Misapplying Inheritance 114
+A poor example of how to implement a subclass (back to initial Bicycle class)
+(see ch6c.rb)
+NOTE: that MountainBike's "initialize" and "spare" OVERRIDE Bicycle's "initialize" and "spare" methods.
+
+
+
+5) Finding the Abstraction 116
+Instead of making Bicycle class a road bike and then subclassing MountainBike,
+make the Bicycle class general (abstract) and use the subclasses for the types
+of bikes (e.g. road, mountain, etc.)
+SUB-classes are SPECIALIZATIONS of SUPER-classes
+
+
+5a) Creating an Abstract Superclass 117
+Ch3 defined abstraction as being disassociated from any specific instance.
+Bicycle as a SUPER-class won't define a complete bike - just the parts that all bikes share.
+It's unlikely that you'd ever invoke "Bicycle.new"
+Some languages (e.g. Java) can declare a class as "abstract", Ruby is more trusting.
+(see ch6d.rb)
+
+
+5b) Promoting Abstract Behavior 120
+The two methods common to all bikes are: size and spare.
+(see ch6e.rb)
+NOTE: A subclass (e.g. RoadBike) can implement or override an inheritance
+NOTE: push-everything-down-and-then-pull-some-things-up strategy is an important
+part of refactoring (e.g. the how the code for size was handled in the first , second and third examples)
+"Promotion failures have low consequences.
+The consequences of a demotion failure can be widespread and severe.
+Promote abstractions rather than demote concretions."
+CODE NOTES:
+  WHY THE args={} ??? What is going on there?
+  How would you send a message to display all attributes?
+http://stackoverflow.com/questions/10006889/how-to-get-attributes-that-were-defined-through-attr-reader-or-attr-accessor
+http://stackoverflow.com/questions/2487333/fastest-one-liner-way-to-list-attr-accessors-in-ruby
+  Ah... ".inspect"
+
+
+5c) Separating Abstract from Concrete 123
+In the last code example (ch6e.rb) I commented out the "spares" methods. RoadBike.spares works as is, but
+MountainBike.spares invokes a "NoMethodError" because it makes an unsupported call to "super.merge()" - there
+is no "spares" method in the superclass: Bicycle.
+How to promote the "spares" method to superclass: Bicycle? Abstractions get promoted, concretions stay in RoadBike.
+1) Bicycles have a chain and a tire size.
+2) All bicycles share the same default for chain.
+3) Subclasses provide their own default for tire size.
+4) Concrete instances of subclasses are permitted to ignore defaults and supply
+instance-specific values.
+(see ch6f.rb)
+1) and 4) are nowtaken care of but the "defaults" in 2) and 3) are not.
+
+
+5d) Using the Template Method Pattern 125
+"This next change alters Bicycle’s initialize method to send messages to get defaults.
+Defining a basic structure in the superclass and sending messages to acquire
+subclass-specific contributions is known as the TEMPLATE METHOD pattern"
+(see ch6g.rb)
+See the boob-trap?
+
+
+5e) Implementing Every Template Method 127
+"Bicycle’s initialize method sends default_tire_size but Bicycle itself does
+not implement it.  Bicycle imposes a requirement upon its subclasses
+that is not obvious from a glance at the code"
+(see ch6h.rb)
+NOTE: Any class that uses the template method pattern must supply an implementation
+for every message it sends
+(see ch6i.rb)
+NOTE: my Ruby install shows a slightly different error msg and both declare the method:
+Without any message:
+ch6i.rb:21:in `default_tire_size': NotImplementedError (NotImplementedError)
+With a messgae:
+ch6i.rb:21:in `default_tire_size': This RecumbentBike cannot respond to: (NotImplementedError)
+POODR with messgae:
+NotImplementedError: This RecumbentBike cannot respond to: 'default_tire_size'
+Reads a little better in irb. Whatevs...
+
+
+
+6) Managing Coupling Between Superclasses and Subclasses 129
+"This section shows two different implementations of spares—an easy, obvious
+one and another that is slightly more sophisticated but also more robust."
+
+
+6a) Understanding Coupling 129
+The following is simple to write, but makes TIGHTLY coupled classes
+(see ch6j.rb & ch6k.rb)
+j + k address the NoMethodError by defining the method Bicycle.spares
+(see ch6l.rb)
+"Notice that the code follows a discernible pattern. Every template method sent by
+Bicycle is implemented in Bicycle itself, and MountainBike and RoadBike both
+send super in their initialize and spares methods."
+There's still a booby-trap.
+(see ch6m.rb)
+The code is okay, but not exactly "super"...
+"   When a subclass sends super it’s effectively declaring that it knows the algorithm;
+it depends on this knowledge. If the algorithm changes, then the subclasses may
+break even if their own specializations are not otherwise affected."
+"super" sends are required from ALL subclass initializations and "spares" methods
+(see ch6n.rb)
+
+
+6b) Decoupling Subclasses Using Hook Messages 134
+One final refactoring: instead of ALLOWING subclasses to know the algorithm and REQUIRING
+that they send super, SUPERCLASSes can instead send HOOK messages.
+HOOK msgs exist to provide subclasses a place to contribute information.
+This way subclasses don't have to know as much and the superclass is in control.
+Superclass send post_initialize, implements a matching method (which does nothing)
+and Subclass overrides post_initialization
+(see ch6o.rb)
+"RoadBike is still responsible for what initialization it needs but is no longer
+responsible for when its initialization occurs"
+(see ch6p.rb)
+
+
+
+7) Summary 139
+"Inheritance solves the problem of related types that share a great deal of common
+behavior but differ across some dimension. It allows you to isolate shared code and
+implement common algorithms in an abstract class, while also providing a structure
+that permits subclasses to contribute specializations.
+    The best way to create an abstract superclass is by pushing code up from concrete
+subclasses. Identifying the correct abstraction is easiest if you have access to at least
+three existing concrete classes. This chapter’s simple example relied on just two but in
+the real world you are often better served to wait for the additional information that
+three cases supply.
+    Abstract superclasses use the template method pattern to invite inheritors to supply
+specializations, and use hook methods to allow these inheritors to contribute these
+specializations without being forced to send super. Hook methods allow subclasses to
+contribute specializations without knowing the abstract algorithm. They remove the
+need for subclasses to send super and therefore reduce the coupling between layers of
+the hierarchy and increase its tolerance for change.
+    Well-designed inheritance hierarchies are easy to extend with new subclasses, even
+for programmers who know very little about the application. This ease of extension is
+inheritance’s greatest strength. When your problem is one of needing numerous specializations
+of a stable, common abstraction, inheritance can be an extremely low-cost
+solution."
+Couldn't have said it better myself!
+
