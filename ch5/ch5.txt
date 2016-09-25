@@ -1,0 +1,166 @@
+http://pdf.th7.cn/down/files/1502/Practical%20Object-Oriented%20Design%20in%20Ruby.pdf
+CHAPTER 5
+Reducing Costs with Duck Typing - QUACK!!!
+
+
+1) Reducing Costs with Duck Typing 85
+The purpose of OOD is to reduce the cost of change.
+Messages are at the design center.
+As is constructing rigorous PUBLIC interfaces.
+Combine these two ideas into a technique known as DUCK TYPING.
+Not "typing" like at a keyboard, but determining a "TYPE"
+DUCK-TYPES are PUBLIC interface that aren't tied to a specific class. They are
+across-class interfaces and replace dependency on class with dependency on messages
+
+
+
+2) Understanding Duck Typing 85
+Types e.g. strings, numbers, arrays, Booleans, etc... the category of contents of
+a variable(generally used to describe data). Knowledge of the variables type allows
+the application to have an expectation about how those contents will behave.
+In Ruby, knowing an objects type is knowing which messages that object will respond to.
+
+
+2a) Overlooking the Duck 87
+(see ch5a.rb & figure 5.1)
+This is also an example of f4.6 in Ch.4.
+
+
+2b) Compounding the Problem 87
+(see ch5b.rb and figure 5.2)
+This dependent-laden code will back you in a corner with no way out.
+Adding a "case" statement that switches on class solves the problem of sending
+the correct message to the correct object but causes an explosion of dependencies.
+Sequence diagrams should ALWAYS be simpler than the code they represent.
+
+
+2c) Finding the Duck 90
+(see ch5c.rb)
+
+2d) Consequences of Duck Typing 94
+The concreteness of the first example makes it simple to understand but dangerous to extend.
+The Duck Typed is more abstract, demanding more understanding, but it is easier to extend.
+concretion vs. abstraction
+Treat objects as if they are defined by their behavior rather than their class
+
+
+2d.1) POLYMORPHISM 95
+http://www.etymonline.com/index.php?term=polymorphous
+Morph - from the Greek for form, shape
+Poly - many
+Darwin's finches are polymorphic: a single species with many forms.
+In OOP polymorphism refers to the ability of many different objects to respond to
+the same message. Senders don't have to care about the class of the receiver;
+receivers supply their own specific version of behavior.
+A Single Message Thus Has Many (POLY) Forms (MORPHS).
+Duck typing, Inheritance and behavior sharing via Ruby Modules are ways to achieve polymorphism.
+Objects ought to be well-behaved for effective polymorphism.
+
+
+
+3) Writing Code That Relies on Ducks 95
+Duck typing relies on recognizing places the application can benefit from "across-class interfaces"
+
+
+3a) Recognizing Hidden Ducks 96
+The following can be replaced with DUCKS:
+A) CASE STATEMENTS THAT SWITCH ON CLASS
+B) KIND_OF? and IS_A?
+C) RESPONDS_TO?
+
+
+3a.1) Case Statements That Switch on Class 96
+(see ch5d.rb)
+(see ch5b.rb and figure 5.2)
+A case statement switching on the class names of domain objects
+What is it that all these case statements want from each argument?
+The answer suggests the message that needs sending and thus begins
+to define the underlying duck type.
+
+
+3a.2) kind_of? and is_a? 97
+(see ch5e.rb)
+These are synonymous class cheking methods.
+This code does the same as the previous block and causes the same problems.
+
+
+3a.3) responds_to? 97
+(see ch5f.rb)
+Depending on class names isn't a good practice, but responds_to? doesn't do quite enough.
+The explicit class names are gone, but not the dependencies.
+
+
+3b) Placing Trust in Your Ducks 98
+The above examples of Recognizing Hidden ducks are all saying,
+"I know who you are and because of that I know what you do."
+and demonstrate a Lack of TRUST.
+
+
+3c) Documenting Duck Types 98
+This chapters example is a SIMPLE kind of Duck - several different
+classes implementing the same method and easy to abstract.
+"When you create duck types you must both document and test their public interfaces.
+Fortunately, good tests are the best documentation, so you are already halfway
+done; you need only write the tests. See Chapter 9, Designing Cost-Effective Tests"
+
+
+3d) Sharing Code Between Ducks 99
+Classes which implement duck types need to share some behavior in common. 
+See ch.7 for writing ducks that share code.
+
+
+3e) Choosing Your Ducks Wisely 99
+The above considerations are only guidelines. kind_of? and responds_to? when
+querying base classes can be acceptable as the base Ruby classes won't change
+as much as the classes you are writing for your app. Base classes are safer dependencies.
+Use your best judgement to LOWER COSTS with design.
+Monkey-patxh at your own risk.
+
+
+
+4) Conquering a Fear of Duck Typing 100
+Static Categorizing vs Dynamic Categorizing
+OT - Category Theory: https://youtu.be/o6L6XeNdd_k
+
+
+4a) Subverting Duck Types with Static Typing 100
+Statically typed languages require explicit declarations of each variable and
+every method parameter.
+Dynamically typed languages omit this requirement.
+Duck typing relies on identifying the stable abstractions on which your code can safely depend.
+
+
+4b) Static versus Dynamic Typing 101
+Static Typing advantages:
+A) The compiler unearths type errors at compile time.
+B) Visible type information serves as documentation.
+C) Compiled code is optimized to run quickly.
+Static Typing Assumptions
+A) Runtime type errors will occur unless the compiler performs type checks.
+B) Programmers will not otherwise understand the code; they cannot infer an object’s type from its context.
+C) The application will run too slowly without these optimizations.
+Dynamic Typing Advantages
+A) Code is interpreted and can be dynamically loaded; there is no compile/make cycle.
+B) Source code does not include explicit type information.
+C) Metaprogramming is easier.
+Dynamic Typing Assumptions
+A) Overall application development is faster without a compile/make cycle.
+B) Programmers find the code easier to understand when it does not contain type declarations; they can infer an object’s type from its context.
+C) Metaprogramming is a desirable language feature.
+
+
+4c) Embracing Dynamic Typing 102
+Duck Typing is built upon dynamic typing - EMBRACE THE DYNAMISM
+
+
+
+5) Summary 104
+    "Messages are at the center of object-oriented applications and they pass among objects
+along public interfaces. Duck typing detaches these public interfaces from specific classes,
+creating virtual types that are defined by what they do instead of by who they are.
+    Duck typing reveals underlying abstractions that might otherwise be invisible.
+Depending on these abstractions reduces risk and increases flexibility, making your
+application cheaper to maintain and easier to change."
+
+
+
