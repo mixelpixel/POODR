@@ -20,34 +20,100 @@ introduce risks to design options.
 
 
 2a) Finding Roles 142
-
+see Duck Types (ch5)
+MODULES: a named group of methods which are independent of class AND
+         can be mixed in to ANY object
+From the POV of the object, it is like CLASSical inheritance
+The total set of messages to which an object can respond includes
+• Those it implements
+• Those implemented in all objects above it in the hierarchy
+• Those implemented in any module that has been added to it
+• Those implemented in all modules added to any object above it in the hierarchy
 
 
 2b) Organizing Responsibilities 143
+(see 7a.rb)
+"Instead of knowing details about other classes, the Schedule should send them messages..."
 
 
 2c) Removing Unnecessary Dependencies 145
+"...which in turn should be sent to each incoming object."
 
-2c.1) Discovering the Schedulable Duck Type
-2c.2) Letting Objects Speak for Themselves
+
+2c.1) Discovering the Schedulable Duck Type 146
+"This change replaces an if
+statement that checks the class of an object with a message sent to that same object."
+
+
+2c.2) Letting Objects Speak for Themselves 147
+"... objects should manage
+themselves; they should contain their own behavior. If your interest is in object B, you
+should not be forced to know about object A if your only use of it is to find things out
+about B."
+
 
 2d) Writing the Concrete Code 147
+(see 7a.rb and 7b.rb)
+"This code hides knowledge of who the Schedule is and what the Schedule does
+inside of Bicycle. Objects holding onto a Bicycle no longer need know about the
+existence or behavior of the Schedule."
 
 
 2e) Extracting the Abstraction 150
+(see 7c.rb)
+"The code in Schedulable is the abstraction and it uses the template method pattern
+to invite objects to provide specializations to the algorithm it supplies."
+"... a distinction between classical inheritance
+and sharing code via modules. This is-a versus behaves-like-a difference definitely
+matters, each choice has distinct consequences."
 
 
 2f) Looking Up Methods 154
-2f.1) A Gross Oversimplification
-2f.2) A More Accurate Explanation
-2f.3) A Very Nearly Complete Explanation
+"Understanding the similarities between classical inheritance and module inclusion is
+easier if you understand how object-oriented languages, in general, and Ruby, in
+particular, find the method implementation that matches a message send. "
+
+
+2f.1) A Gross Oversimplification 154
+If a search for a call to a method from a subclass is found in neither the sub or superclass
+..."Ruby gives the original receiver a second chance by sending it a new message,
+method_missing, and passing (the method called) as an argument. Attempts to resolve this
+new message restart the search along the same path, except now the search is for
+method_missing rather than (the method called)"
+
+
+2f.2) A More Accurate Explanation 155
+LOOKUP PATH:
+Instance > subclass > superclass > included modules > ObjectClass
+NOTE: Sub and Superclass method of the same name will override those of Modeuls
+Messages from Modules to super and sub classes that don't have methods to deal with them
+will create confusing failures.
+
+
+2f.3) A Very Nearly Complete Explanation 156
+"When a single class includes several different modules,
+the modules are placed in the method lookup path in REVERSE ORDER of module inclusion.
+Thus, the methods of the last included module are encountered first in the
+LOOKUP PATH."
+NOTE: In addition to Rubys keyword "include" which includes module methods in classes
+NOTE: The Ruby keyword "extend" will extend an instace of a class with the modules methods
+LOOKUP PATH:
+Instance methods > instance EXTENSIONS > subclass methods > subclass INCLUSION >>
+          >>  superclass methods > superclass INCLUSIONS > ObjectClass methods
 
 
 2g) Inheriting Role Behavior 158
+"Now that you’ve seen how to define a role’s shared code in a module and how a module’s
+code gets inserted into the method lookup path, you are equipped to write some
+truly frightening code"
 
 
 
 3) Writing Inheritable Code 158
+"The usefulness and maintainability of inheritance hierarchies and modules is in direct
+proportion to the quality of the code. More so than with other design strategies, sharing
+inherited behavior requires very specific coding techniques, which are covered in the
+following sections."
 
 
 3a) Recognize the Antipatterns 158

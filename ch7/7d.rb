@@ -5,8 +5,8 @@ CHAPTER 7 - Sharing Role Behavior with Modules, Extracting the Abstraction pg.15
 
 
 
-require_relative '7a.rb' # <-- class Schedule
 require_relative '7c.rb' # <-- module Schedulable
+require_relative '7a.rb' # <-- class Schedule
 
 
 class Bicycle
