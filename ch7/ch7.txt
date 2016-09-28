@@ -117,24 +117,86 @@ following sections."
 
 
 3a) Recognize the Antipatterns 158
+"There are two antipatterns that indicate that your code might benefit from inheritance.
+First, an object that uses a variable with a name like type or category to
+determine what message to send to self contains two highly related but slightly
+different types. This is a maintenance nightmare; the code must change every time a
+new type is added. "
+"Second, when a sending object checks the class of a receiving object to determine
+what message to send, you have overlooked a duck type. This is another maintenance
+nightmare"
+"In addition to sharing an interface, duck types might also share behavior. When
+they do, place the shared code in a module and include that module in each class or
+object that plays the role."
 
 
 3b) Insist on the Abstraction 159
+"All of the code in an abstract superclass should apply to every class that inherits it.
+Superclasses should not contain code that applies to some, but not all, subclasses.
+This restriction also applies to modules: the code in a module must apply to all
+who use it. "
+"If you cannot correctly identify the abstraction there may not be one, and if no
+common abstraction exists then inheritance is not the solution to your design
+problem."
 
 
 3c) Honor the Contract 159
+"Subclasses agree to a contract; they promise to be substitutable for their superclasses."
+
+
+3c.1) LISKOV SUBSTITUTION PRINCIPLE (LSP) 160
+"When you honor the contract, you are following the Liskov Substitution
+Principle, which is named for its creator, Barbara Liskov, and supplies the “L”
+in the SOLID design principles.
+    Her principle states:
+        Let q(x) be a property provable about objects x of type T. Then q(y)
+        should be true for objects y of type S where S is a subtype of T.
+Mathematicians will instantly comprehend this statement; everyone else
+should understand it to say that in order for a type system to be sane, subtypes
+must be substitutable for their supertypes.
+Following this principle creates applications where a subclass can be used
+anywhere its superclass would do, and where objects that include modules
+can be trusted to interchangeably play the module’s role.
 
 
 3d) Use the Template Method Pattern 160
+"The fundamental coding technique for creating inheritable code is the template
+method pattern. This pattern is what allows you to separate the abstract from the concrete.
+The abstract code defines the algorithms and the concrete inheritors of that abstraction
+contribute specializations by overriding these template methods.
+    The template methods represent the parts of the algorithm that vary and
+creating them forces you to make explicit decisions about what varies and what
+does not."
 
 
 3e) Preemptively Decouple Classes 161
+"Avoid writing code that requires its inheritors to send super;
+instead use HOOK messages to allow subclasses to participate while
+absolving them of responsibility for knowing the abstract algorithm."
+NOTE: "HOOK methods solve the problem of sending super, but, unfortunately,
+       only for adjacent levels of the hierarchy"
 
 
 3f) Create Shallow Hierarchies 161
-
+"The limitations of hook methods are just one of the many reasons to create shallow
+hierarchies."
 
 
 4) Summary 162
+"When objects that play a common role need to share behavior, they do so via a Ruby
+module. The code defined in a module can be added to any object, be it an instance
+of a class, a class itself, or another module.
+    When a class includes a module, the methods in that module get put into the same
+lookup path as methods acquired via inheritance. Because module methods and inherited
+methods interleave in the lookup path, the coding techniques for modules mirror
+those of inheritance. Modules, therefore, should use the template method pattern to
+invite those that include them to supply specializations, and should implement hook
+methods to avoid forcing includers to send super (and thus know the algorithm).
+    When an object acquires behavior that was defined elsewhere, regardless of
+whether this elsewhere is a superclass or an included module, the acquiring object
+makes a commitment to honoring an implied contract. This contract is defined by the
+Liskov Substitution Principle, which in mathematical terms says that a subtype should
+be substitutable for its supertype, and in Ruby terms this means that an object should
+act like what it claims to be."
 
 
